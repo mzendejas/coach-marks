@@ -67,7 +67,7 @@
 					//console.log(parentClassList);
 					//' + ( ( typeof parentClassList !== "undefined") ? " " + parentClassList : "" ) + '
 					$copy = this._deleteData( $copy ).attr('id', 'coach-element-' + this.coach_elements).wrap('<div class="coach-element" style="position:absolute;z-index:2010;" />').parent().css( { top: $e_pos.top + 'px', left: $e_pos.left + 'px' } );
-					if( typeof parentClassList !== "undefined" )
+					if( parentClassList != "" )
 					{
 						$copy.find("div.coach-element").addClass( parentClassList );
 					}
