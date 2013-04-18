@@ -67,9 +67,12 @@
 					//console.log(parentClassList);
 					//' + ( ( typeof parentClassList !== "undefined") ? " " + parentClassList : "" ) + '
 					$copy = this._deleteData( $copy ).attr('id', 'coach-element-' + this.coach_elements).wrap('<div class="coach-element" style="position:absolute;z-index:2010;" />').parent().css( { top: $e_pos.top + 'px', left: $e_pos.left + 'px' } );
+					console.log(parentClassList);
 					if( parentClassList != "" )
 					{
-						$copy.find("div.coach-element").addClass( parentClassList );
+						console.log($copy);
+						$copy = $copy.find("div.coach-element").addClass( parentClassList );
+						console.log($copy);
 					}
 					this.$main_div.find('div#coach-elements').append( $copy );
 					obj.element.cloned = $copy;
