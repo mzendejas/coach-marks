@@ -58,6 +58,7 @@
 				$e = (o.element instanceof jQuery) ? o.element : $(o.element) ;
 				this.coach_elements++;
 				$e_pos = $e.offset();
+				obj.element = {};
 				obj.element.org = $e;
 				if( typeof o.clone !== "undefined" || o.clone )
 				{
