@@ -62,8 +62,9 @@
 				obj.element.org = $e;
 				if( typeof o.clone === "undefined" || o.clone )
 				{
+					var parentClassList = $e.parent().attr('class').replace(/ui-/g, "cm-");
 					$copy = $e.clone();
-					$copy = this._deleteData( $copy ).attr('id', 'coach-element-' + this.coach_elements).wrap('<div class="coach-element" style="position:absolute;z-index:2010;" />').parent().css( { top: $e_pos.top + 'px', left: $e_pos.left + 'px' } );
+					$copy = this._deleteData( $copy ).attr('id', 'coach-element-' + this.coach_elements).wrap('<div class="coach-element' + (typeof parentClassList !== "undefined") ? ' ' + parentClassList : '' + '" style="position:absolute;z-index:2010;" />').parent().css( { top: $e_pos.top + 'px', left: $e_pos.left + 'px' } );
 					this.$main_div.find('div#coach-elements').append( $copy );
 					obj.element.cloned = $copy;
 				}
