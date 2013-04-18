@@ -60,7 +60,7 @@
 				$e_pos = $e.offset();
 				obj.element = {};
 				obj.element.org = $e;
-				if( typeof o.clone !== "undefined" || o.clone )
+				if( typeof o.clone === "undefined" || o.clone )
 				{
 					$copy = $e.clone();
 					$copy = this._deleteData( $copy ).attr('id', 'coach-element-' + this.coach_elements).wrap('<div class="coach-element" style="position:absolute;z-index:2010;" />').parent().css( { top: $e_pos.top + 'px', left: $e_pos.left + 'px' } );
