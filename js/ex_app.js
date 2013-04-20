@@ -104,15 +104,6 @@ $('div[data-role="page"]').on("pagebeforeshow", function(){
 });
 $('div[data-role="page"]').on("pageshow", function(){
 	var cur_page = $.mobile.activePage[0].id;
-	/*var modtitle = location.pathname;
-	if(location.search)
-	{
-		modtitle += location.search;
-	}
-	if(location.hash)
-	{
-		modtitle += location.hash;
-	}*/
 	_gaq.push(["_trackPageview", cur_page]);
 	if( cur_page == "ex2-page" )
 	{
