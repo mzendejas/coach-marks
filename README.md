@@ -2,6 +2,17 @@
 
 Coach Marks is a simple plugin to help add coach marks to your jquery mobile apps.
 
+## Features
+
+* Clones the target element and brings it above the modal.
+* Automatic reposition of elements and images (arrows).
+* Tap anywhere in the screen to close.
+* Callback for closed Event, so you can handle the save of the status.
+
+## Demo / Examples
+
+[Demo / Examples](http://mzendejas.github.io/coach-marks/)
+
 ## Installation
 
 Include script *after* the jQuery Mobile library:
