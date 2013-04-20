@@ -316,3 +316,5 @@ I haven't tested this, but I think it could work with Animated GIFs too :).
 - Report issues, questions, feature requests on [GitHub Issues](https://github.com/mzendejas/coach-marks/issues)
 
 Pull requests are very welcome! Make sure your patches are well tested.
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e9b2c5de4b2b97261cccffaff276fd14 "githalytics.com")](http://githalytics.com/mzendejas/coach-marks)
