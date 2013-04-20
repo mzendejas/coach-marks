@@ -300,15 +300,15 @@ I have been using the jQuery Mobile iPhone screen size: 320x480 to create the im
 
 I create the graphics and then I cut them, each arrow with text to one image.
 
-
+![Screen Size Comparation](imgs/make-coach-mark.png)
 
 The above image results in 2 PNG files:
 
+![Edit Button Coach Mark](imgs/cm-ex1-edit.png)
 
+![Menu Button Coach Mark](imgs/cm-ex1-menu.png)
 
-
-
-I haven't tested, but I think it could work with Animated GIFs too :).
+I haven't tested this, but I think it could work with Animated GIFs too :).
 
 ## Development
 
