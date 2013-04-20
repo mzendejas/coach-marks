@@ -328,4 +328,4 @@ I haven't tested this, but I think it could work with Animated GIFs too :).
 
 Pull requests are very welcome! Make sure your patches are well tested.
 
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e9b2c5de4b2b97261cccffaff276fd14 "githalytics.com")](http://githalytics.com/mzendejas/coach-marks)
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/a9c5a595e39e1913706092109107b8e1 "githalytics.com")](http://githalytics.com/mzendejas/coach-marks)
