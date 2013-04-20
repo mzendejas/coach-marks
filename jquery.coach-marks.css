@@ -1,0 +1,8 @@
+.coach-element.cm-header .ui-btn-inner, .coach-element.cm-footer .ui-btn-inner, .coach-element.cm-mini .ui-btn-inner {
+	font-size: 12.5px;
+	padding: .55em 11px .5em;
+}
+.ui-btn-icon-notext .ui-btn-inner {
+	padding: 0!important;
+	height: 100%;
+}

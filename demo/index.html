@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+<title>Coach-Marks Examples</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+<link rel="stylesheet" href="./css/app.css" />
+<link rel="stylesheet" href="./css/jquery.coach-marks.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script src="./js/jquery.coach-marks.js"></script>
+<script src="./js/jquery.swipemenu.js"></script>
+<script src="./js/jquery-cookie.js"></script>
+</head>
+
+<body>
+
+<div id="index-page" data-role="page">
+	<div data-role="header">
+    	<h1>Coach-Marks Examples</h1>
+    </div>
+	<div data-role="content">
+    	<h1>Coach Marks for JQuery Mobile</h1>
+        <p>A simple plugin to help add coach marks to your jquery mobile apps.</p>
+    	<p>This plugin doesn't require another library, it uses images as the coach marks.</p>
+        <ul data-inset="true" data-role="listview">
+        	<li data-role="list-divider">Features</li>
+        	<li>Clones the target element and brings it above the modal.</li>
+            <li>Automatic reposition of elements and images (arrows).</li>
+            <li>Tap anywhere in the screen to close.</li>
+            <li>Callback for closed Event, so you can handle the save of the status.</li>
+            <li data-role="list-divider">Download, Installation & Usage</li>
+            <li><a href="https://github.com/mzendejas/coach-marks/" rel="external">GitHub</a></li>
+            <li data-role="list-divider">Demos / Examples</li>
+            <li><a href="#ex1-page">Example 1 - Basic</a></li>
+            <li><a href="#ex2-page">Example 2 - Function Positioning</a></li>
+            <li><a href="#ex3-page">Example 3 - Seen Callback</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="ex1-page" data-role="page">
+	<div data-role="panel" data-display="push" id="menu-panel">
+    	<ul data-role="listview">
+        	<li><a href="#index-page">Home</a></li>
+            <li data-role="list-divider">Demos / Examples</li>
+            <li><a href="#ex1-page">Example 1 - Basic</a></li>
+            <li><a href="#ex2-page">Example 2 - Function Positioning</a></li>
+            <li><a href="#ex3-page">Example 3 - Seen Callback</a></li>
+        </ul>
+    </div>
+	<div data-role="header" data-theme="a">
+    	<a id="menu-btn" href="#menu-panel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+    	<h1>Coach-Marks Examples</h1>
+        <a id="edit-btn" href="#" data-role="button" data-theme="e">Edit</a>
+    </div>
+	<div data-role="content">
+		<h2>Basic</h2>
+        <p>This is the simplest form of one image per element, as we don't want to resize the image proportionally to the screen width, we can add the text to the arrow and use only 1 image per element, also you can add as many marks as you need on one page.</p>
+        <strong>jQuery</strong>
+        <pre class="prettyprint">
+        $.mobile.activePage.coachmarks({
+					'marks': { 
+						'menuBtn': {
+							element: $('a#menu-btn', $.mobile.activePage),
+							image: {
+								src: "cm_ex1_menu.png",
+								pos: {
+									top: 25,
+									left: -13
+								}
+							}
+						},
+						'editBtn': {
+							element: $('a#edit-btn', $.mobile.activePage),
+							image: {
+								src: "cm_ex1_edit.png",
+								pos: {
+									top: 37,
+									left: -129
+								}
+							}
+						}
+					}
+				});
+        </pre>
+        
+        <p>This CSS rules were added, because the buttons lost some CSS rules without their parent class names, so the plugin automatically sets the parent classes to the cloned element container and replaces the "ui-" part of the class name with "cm-", so we don't mess with the normal jQuery Mobile class names.</p>
+        
+        <strong>CSS</strong>
+        <pre class="prettyprint">
+        .coach-element.cm-header .ui-btn-inner, .coach-element.cm-footer .ui-btn-inner, .coach-element.cm-mini .ui-btn-inner {
+            font-size: 12.5px;
+            padding: .55em 11px .5em;
+        }
+        .ui-btn-icon-notext .ui-btn-inner {
+            padding: 0!important;
+            height: 100%;
+        }
+        </pre>
+    </div>
+</div>
+
+<div id="ex2-page" data-role="page">
+	<div data-role="panel" data-display="push" id="menu-panel">
+    	<ul data-role="listview">
+        	<li><a href="#index-page">Home</a></li>
+            <li data-role="list-divider">Demos / Examples</li>
+            <li><a href="#ex1-page">Example 1 - Basic</a></li>
+            <li><a href="#ex2-page">Example 2 - Function Positioning</a></li>
+            <li><a href="#ex3-page">Example 3 - Seen Callback</a></li>
+        </ul>
+    </div>
+	<div data-role="header" data-theme="a">
+    	<a id="menu-btn" href="#menu-panel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+    	<h1>Coach-Marks Examples</h1>
+    </div>
+	<div data-role="content">
+		<h2>Some List Title</h2>
+        <ul id="data-list" data-inset="true" data-role="listview">
+        	<li><h1>Item 1</h1><p>Sub text</p></li>
+            <li><h1>Item 2</h1><p>Sub text</p></li>
+            <li><h1>Item 3</h1><p>Sub text</p></li>
+            <li><h1>Item 4</h1><p>Sub text</p></li>
+            <li><h1>Item 5</h1><p>Sub text</p></li>
+            <li><h1>Item 6</h1><p>Sub text</p></li>
+            <li><h1>Item 7</h1><p>Sub text</p></li>
+            <li><h1>Item 8</h1><p>Sub text</p></li>
+            <li><h1>Item 9</h1><p>Sub text</p></li>
+            <li><h1>Item 10</h1><p>Sub text</p></li>
+        </ul>
+        <h2>Positioning with Functions</h2>
+        <p>This is a little more complex example, we are using functions for positioning, also in the first mark ("Swipe" mark) we use a target element but we don't clone it and the second one ("Tap anywhere" mark) we don't even use a target element, because the "Tap anywhere" mark can be positioned anywhere on the screen, and we include a size object so we can do the calculations in the pos functions, the size object contains the dimensions of the image.</p>
+        <strong>jQuery</strong>
+        <pre class="prettyprint">
+        $.mobile.activePage.coachmarks({
+			'marks': { 
+				'liSwipe': {
+					element: $('ul#data-list li:first-child', $.mobile.activePage),
+					clone: false,
+					image: {
+						src: "cm_ex2_swipe.png",
+						pos: {
+							top: 0,
+							left: function(w){
+								return Math.floor( ( w.width - this.size.w ) / 2 );
+							}
+						},
+						size: { w: 222, h: 135 },
+					}
+				},
+				'tapAnywhere': {
+					element: null,
+					image: {
+						src: "cm_ex2_tapanywhere.png",
+						pos: {
+							top: function(w){
+								return ( w.height - this.size.h ) - 10;
+							},
+							left: function(w){
+								return ( w.width - this.size.w ) - 10;
+							}
+						},
+						size: { w: 229, h: 119 },
+					}
+				}
+			}
+		});
+        </pre>
+    </div>
+</div>
+
+<div id="ex3-page" data-role="page">
+	<div data-role="panel" data-display="push" id="menu-panel">
+    	<ul data-role="listview">
+        	<li><a href="#index-page">Home</a></li>
+            <li data-role="list-divider">Demos / Examples</li>
+            <li><a href="#ex1-page">Example 1 - Basic</a></li>
+            <li><a href="#ex2-page">Example 2 - Function Positioning</a></li>
+            <li><a href="#ex3-page">Example 3 - Seen Callback</a></li>
+        </ul>
+    </div>
+	<div data-role="header" data-theme="a">
+    	<a id="menu-btn" href="#menu-panel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+    	<h1>Coach-Marks Examples</h1>
+    </div>
+	<div data-role="content">
+    	<a id="ex3-delete-btn" href="#" data-role="button" data-theme="b">Delete Seen Status</a>
+        <h2>Saving seen status</h2>
+        <p>In this example we use the "Seen" Callback to set a cookie with the name of 'cm-status-ex3', but first we check if that cookie doesn't exist, if it doesn't we display the coach marks. In the seen handler you can make an AJAX call, use localStorage, etc.</p>
+        <strong>jQuery</strong>
+        <pre class="prettyprint">
+        var cm_ex3 = $.cookie("cm-status-ex3");
+		if( typeof cm_ex3 === "undefined" )
+		{
+			$.mobile.activePage.coachmarks({
+				seen: function(){
+					$.cookie("cm-status-ex3", "seen");
+				},
+				modalColor:'rgba(0,0,0,0.6)',
+				'marks': { 
+					'deleteBtn': {
+						element: $('a#ex3-delete-btn', $.mobile.activePage),
+						clone: true,
+						cloneWidth: true,
+						css: { 'margin':'0px' },
+						image: {
+							src: "cm_ex3_button.png",
+							pos: {
+								top: (42 + 5),
+								left: function(w){
+									return Math.floor( ( w.width - this.size.w ) / 2 );
+								}
+							},
+							size: { w: 234, h: 82 },
+						}
+					}
+				}
+			});
+		}
+		$("a#ex3-delete-btn", $.mobile.activePage).on("click", function(e){
+			e.preventDefault();
+			$.removeCookie("cm-status-ex3");
+			return false;
+		});
+        </pre>
+    </div>
+</div>
+
+<script src="./js/ex_app.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
